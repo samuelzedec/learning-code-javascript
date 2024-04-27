@@ -13,12 +13,10 @@ do {
 
     switch(escolha) {
         case 1: 
-            maisOuMenos = parseFloat(prompt('Qual valor deseja adicionar:'))
-            dinheiroInicial += maisOuMenos
+            dinheiroInicial += parseFloat(prompt('Qual valor deseja adicionar:'))
             break
         case 2: 
-            maisOuMenos = parseFloat(prompt('Qual valor deseja retirar'))
-            dinheiroInicial -= maisOuMenos
+            dinheiroInicial -= parseFloat(prompt('Qual valor deseja retirar'))
             break
         case 3:
             alert('Programa Encerrado!')
