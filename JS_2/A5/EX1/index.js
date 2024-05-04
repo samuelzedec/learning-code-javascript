@@ -24,7 +24,11 @@ do {
     switch(menu) {
         case 1: 
             acao = nome.shift()
-            alert('Paciente Consultado: ' + acao)
+            if(acao) {
+                alert('Paciente Consultado: ' + acao)
+            } else {
+                alert('Não há mais pacientes na fila de espera')
+            }
             break
         case 2: 
             acao = prompt('Nome do paciente')

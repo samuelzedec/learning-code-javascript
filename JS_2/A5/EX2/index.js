@@ -1,15 +1,11 @@
-let cartas = ['carta.1', 'carta.2', 'carta.3', 'carta.4', 'carta.5', 'carta.6', 'carta.7', 'carta.8', 'carta.9', 'carta.10']
+let cartas = []
 let valores = 0
 let acao
-let i
 
 do {
 
-    for(i = 0; i < cartas.length; i++){
-    }
-
     valores = parseFloat(prompt(
-        'Quantidade de cartas: ' + i +
+        'Quantidade de cartas: ' + cartas.length +
         '\n\nDigite a opção desejada:' +
         '\n[1] - Puxar uma carta' +
         '\n[2] - Adicionar uma carta' +
@@ -19,7 +15,11 @@ do {
     switch(valores) {
         case 1:
             acao = cartas.shift()
-            alert(`Carta puxada: ${acao}`)
+            if(acao) {
+                alert(`Carta puxada: ${acao}`)
+            } else {
+                alert('não a carta no baralho')
+            }
             break
         case 2: 
             acao = prompt('Qual carta deseja adicionar')
