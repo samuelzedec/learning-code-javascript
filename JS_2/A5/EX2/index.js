@@ -1,35 +1,29 @@
-let cartas = []
-let valores = 0
-let acao
+let baralho = []
+let acao = ''
+let menu = 0
 
 do {
-
-    valores = parseFloat(prompt(
-        'Quantidade de cartas: ' + cartas.length +
-        '\n\nDigite a opção desejada:' +
-        '\n[1] - Puxar uma carta' +
-        '\n[2] - Adicionar uma carta' +
-        '\n[3] - Sair'
+    menu = Number(prompt(
+        'Quantidade de cartas: ' + baralho.length +
+        '\n\nDigite a opção deseja:' +
+        '\n[1] - Tirar uma carta do topo do baralho' +
+        '\n[2] - Adicionar uma carta ao final do baralho' +
+        '\n[3] - Sair do programa' 
     ))
 
-    switch(valores) {
+    switch(menu) {
         case 1:
-            acao = cartas.shift()
-            if(acao) {
-                alert(`Carta puxada: ${acao}`)
-            } else {
-                alert('não a carta no baralho')
-            }
+            acao = baralho.shift()
+            acao ? alert('Carta puxada: ' + acao) : alert('não há cartas no baralho')
             break
         case 2: 
-            acao = prompt('Qual carta deseja adicionar')
-            cartas.unshift(acao)
+            acao = prompt('Qual carta você deseja adicionar?')
+            baralho.push(acao)
             break
-        case 3: 
-            alert('Programa Encerrado')
+        case 3:
+            alert('Programa encerrado...')
             break
         default:
-            alert('Opção Incorreta')
+            alert('Opção incorreta. Tente novamente!')
     }
-
-} while(valores !== 3)
+} while(menu !== 3)

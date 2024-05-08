@@ -31,7 +31,7 @@ console.log(indice)
 // slice: Copia uma parte do array e devolve a parte copiada sem alterar o array original
 const hobbits = arr.slice(0, 4)
 // Também pode ser usado com números negativos referenciar o final do array
-const outros = arr.slice(-6, -3)
+const outros = arr.slice(-4)
 console.log(arr)
 console.log(hobbits)
 console.log(outros)
@@ -50,5 +50,7 @@ console.log(sociedade)
 // Usando o for para percorrer cada elemento do array
 for (let indice = 0; indice < sociedade.length; indice++) {
     const elemento = sociedade[indice]
-    console.log(`${elemento} se encontra na posição indice ${indice}`)
+    console.log(elemento + " se encontra na posição " + indice)
   }
+  
+

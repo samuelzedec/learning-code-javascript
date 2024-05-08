@@ -1,11 +1,8 @@
-let listaDeCompras = [true, false]
+let listaDeCompras = []
 console.log(listaDeCompras)
 
 listaDeCompras[0] = 'arroz'
-listaDeCompras[1] = 'feijão'
-listaDeCompras[2] = null
-listaDeCompras[6] = 'gabriel'
-
+listaDeCompras[1] = 'Feijão'
+listaDeCompras[9] = 7
 
 console.log(listaDeCompras)
-console.log(listaDeCompras[10])
