@@ -3,6 +3,7 @@ let menu = 0
 let acao = 0
 
 do {
+    let dados = ''
     menu = Number(prompt(
         'Digite a opção desejada:\n' +
         'Dados armazenados: ' + array[0].length + '\n\n' +
@@ -36,14 +37,22 @@ do {
                         }
                     }
                 }
-                alert(`Dados ordenados: \n${array[0].join('\n')}`)
+                //alert(`Dados ordenados: \n${array[0].join('\n')}`)
+                for(let k = 0; k < array[0].length; k++) {
+                   dados += '\n' + array[0][k] 
+                }
+                alert(`Dados ordenados: ${dados}`)
             } else {
                 alert('Não há dados armazenados')
             }
             break
         case 3:
             if(array[1].length > 0) {
-                alert(`Dados na ordem de envio: \n${array[1].join('\n')}`)
+                //alert(`Dados na ordem de envio: \n${array[1].join('\n')}`)
+                for(let x = 0; x < array[1].length; x++ ) {
+                    dados += '\n' + array[1][x]
+                }
+                alert(`Dados na ordem de envio: ${dados}`)
             } else {
                 alert('Não há dados armazenados')
             }
