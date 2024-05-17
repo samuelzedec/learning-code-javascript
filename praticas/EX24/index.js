@@ -1,22 +1,20 @@
-let array = [1, 2, 7, 4, 9, 11, 15, 14, 20]
-let n = 0 
-
-function achei() {
-    n = Number(prompt('Digite um número'))
+let array = [10, 8, 90, 7, 100, 1, 0]
+let numero = Number(prompt('Digite um numero:'))
+function verificar(number) {
+    let dados = 0
     for(let i = 0; i < array.length; i++) {
-        if(n === array[i]) {
-            return 1
-        } 
+        if(number === array[i]) {
+            dados = 1
+            break
+        } else {
+            dados = 0
+        }
     }
-}
 
-function exibir() {
-    let resultado = achei()
-    if(resultado === 1) {
-        alert('Número achado')
+    if(dados === 1) {
+        alert('Número encontrado')
     } else {
-        alert('Numero não encotrado')
+        alert('Número não encontrado')
     }
 }
-
-exibir()
+verificar(numero)
