@@ -1,127 +1,174 @@
-let sala = [[], [], []]
-const turma = prompt('Série da turma?')
-let decisao = 0
+//Array que guarda as turmas
+const escola = []
+/*
+    Função usada para criar uma turma:
+    - serie: guardar a serie da turma
+    - sala: guarda a sala da turma
+    - turno: guarda o turno e ajuda a fazer a divisao por turnos
+*/ 
+function criarTurma() {
+    const serie = prompt('Informe a serie que deseja cadastrar:')
+    const sala = prompt('Informe o número da sala da turma:')
+    const turno = prompt('Informe o turno da turma: \n• Matutino\n• Vespertino\n• Noturno')
 
-function menu() {
-    return Number(prompt(
-        'Cadastro dos alunos da turma: ' + turma +
-        '\nNúmero de alunos: ' + sala[2].length +
-        '\n\nDigite a opção desejada: ' +
-        '\n[1] - Cadastro de aluno(a)' +
-        '\n[2] - Ver turma completa' +
-        '\n[3] - Ver alunos cadastrados' +
-        '\n[4] - Ver alunas cadastradas' +
-        '\n[5] - Encerrar programa'
-    ))
+    const confirmacao = confirm(
+        'Confirme se os dados da turma estão corretos:' +
+        '\nTurma: ' + serie +
+        '\nSala: ' + sala +
+        '\nTurno: ' + turno
+    )
+
+    if(confirmacao) {
+        alert('Confirmado, turma cadastra no banco de dados...')
+        //turma: é usado para guardar cada valor em um objeto e jogar no array
+        const turma = {serie, sala, turno, alunos: []}
+        escola.push(turma)
+    } else {
+        alert('Cancelado, turma não cadastrada no banco de dados...')
+    }
 }
 
-function envioDeAluno() {
-    let aluno = {}
-    let confirmacao
-
-    aluno.sexo = prompt('Sexo do aluno ou aluna? \n[M] - Masculino \n[F] - Feminino')
-    if(aluno.sexo === 'M') {
-        aluno.nome = prompt('Nome do aluno?')
-        aluno.idade = prompt('Idade do aluno?')
+/*
+    Essa função é usada para ver uma lista rapida das turmas que a escola tem, exibindo o índice no array, a turma e a quantidade de alunos e o turno
+*/
+function listarTurma() {
+    if(escola.length > 0) {
+        const turmaEmTexto = escola.reduce(function(textoFinal, turmaAtual, indice) {
+            textoFinal += indice + '. Turma: '
+            textoFinal += turmaAtual.serie + ' ('
+            textoFinal += turmaAtual.alunos.length + (turmaAtual.alunos.length === 1 ? ' aluno)\n' : ' alunos) ')
+            textoFinal += turmaAtual.turno + '\n'
+            return textoFinal
+        }, '')
+        alert(turmaEmTexto)
     } else {
-        aluno.nome = prompt('Nome da aluna?')
-        aluno.idade = prompt('Idade da aluna?')
+        alert('Não há turmas cadastradas')
     }
+}
 
-    if(aluno.sexo === 'M') {
-        confirmacao = confirm(
-            'Confirme os dados: ' +
-            '\nNome: ' + aluno.nome +
-            '\nIdade: ' + aluno.idade +
-            '\nSexo: Masculino'
+/*
+    Com essa função vamos exibir a turma por completo com cada dado sobre ela
+*/
+function exibirTurma() {
+    const i = prompt('Informe a o índice da turma:')
+    if(i >= 0 && i < escola.length) {
+        const turma = escola[i]
+        const alunosEmTexto = turma.alunos.reduce(function(textoFinal, alunoAtual) {
+            textoFinal += '\n - ' + alunoAtual 
+            return textoFinal
+        }, '')
+
+        alert(
+            'Índice: ' + i +
+            '\nSérie: ' + escola[i].serie +
+            '\nSala: ' + escola[i].sala +
+            '\nTurno: ' + escola[i].turno + 
+            '\nQuantidade de alunos: ' + escola[i].alunos.length +
+            '\nNome dos alunos: ' + alunosEmTexto
         )
-
-        if(confirmacao) {
-            sala[0].push(aluno)
-            sala[2].push(aluno)
-            alert('Dados enviados com sucesso!')
-        } else {
-            alert('Cancelamento no envio de Dados!')
-        }
     } else {
-        confirmacao = confirm(
-            'Confirme os dados: ' +
-            '\nNome: ' + aluno.nome +
-            '\nIdade: ' + aluno.idade +
-            '\nSexo: Feminino'
+        alert('Turma não cadastrada no banco de dados')
+    }
+}
+
+/*
+    Essa função vamos cadastrar o aluno de acordo com o indice da turma
+*/
+function cadastrarAluno() {
+    const nomeDoAluno = prompt('Informe o nome do(a) aluno(a):')
+    const i = Number(prompt('Informe o índice da turma:'))
+
+    if(i >= 0 && i < escola.length) {
+        const confirmacao = confirm (
+            'Confirme se os dados informados estão corretos:' +
+            '\nNome: ' + nomeDoAluno +
+            '\nSérie: ' + escola[i].serie
         )
-
+    
         if(confirmacao) {
-            sala[1].push(aluno)
-            sala[2].push(aluno)
-            alert('Dados enviados com sucesso!')
+            alert('Matricula feita com sucesso...')
+            escola[i].alunos.push(nomeDoAluno)
         } else {
-            alert('Cancelamento no envio de Dados!')
-        }
-    }
-}
-
-function verTurmaCompleta() {
-    if(sala[2].length > 0) {
-        for(let i = 0; i < sala[2].length; i++) {
-            alert(
-                'Matrícula: ' + (1 + i) +
-                '\nNome: ' + sala[2][i].nome +
-                '\nIdade: ' + sala[2][i].idade +
-                '\nSexo: ' + sala[2][i].sexo
-            )
-        }
-    }
-}
-
-function verTurmaM() {
-    if(sala[0].length > 0) {
-        for(let i = 0; i < sala[0].length; i++) {
-            alert(
-                'Nome do aluno: ' + sala[0][i].nome +
-                '\nidade do Aluno: ' + sala[0][i].idade +
-                '\nSexo do aluno: Masculino'
-            )
+            alert('Cancelamento da matrícula feito com sucesso')
         }
     } else {
-        alert('Não há alunos cadastrados')
-    }
-}  
-
-function verTurmaF() {
-    if(sala[1].length > 0) {
-        for(let i = 0; i < sala[1].length; i++) {
-            alert(
-                'Nome da aluna: ' + sala[1][i].nome +
-                '\nidade da Aluna: ' + sala[1][i].idade +
-                '\nSexo da aluna: Feminino'
-            )
-        }
-    } else {
-        alert('Não há alunas cadastradas')
+        alert('Sala não cadastrada no banco de dados')
     }
 }
+/*
+    Aqui usamos a propriedade turno para dividir as turma e exibir turno por turno
+*/
+function dividirTurma() {
+    const turnosDivididos = escola.reduce(function(acumulador, turma) {
+        if(turma.turno === 'Matutino') {
+            acumulador[0].push(turma.serie)
+        } else if(turma.turno === 'Vespertino') {
+            acumulador[1].push(turma.serie)
+        } else {
+            acumulador[2].push(turma.serie)
+        }
+        return acumulador
+    }, [[],[],[]])
+
+    if(turnosDivididos[0].length > 0) {
+        turnosDivididos[0].forEach(function(elemento) {
+            alert('Turma no turno Matutino: ' + elemento)
+        })
+    } else {
+        alert('Não há turma cadastrada no turno Matutino')
+    }
+
+    if(turnosDivididos[1].length > 0) {
+        turnosDivididos[1].forEach(function(elemento) {
+            alert('Turma no turno Vespertino: ' + elemento)
+        })
+    } else {
+        alert('Não há turma cadastrada no turno Vespertino')
+    }
+
+    if(turnosDivididos[2].length > 0) {
+        turnosDivididos[2].forEach(function(elemento) {
+            alert('Turma no turno Noturno: ' + elemento)
+        })
+    } else {
+        alert('Não há turma cadastrada no turno Noturno')
+    }
+}
+
+let opcao;
 
 do {
-    decisao = menu()
+    opcao = prompt(
+        'Menu:\n' +
+        '1. Criar Turma\n' +
+        '2. Listar Turmas\n' +
+        '3. Exibir Turma\n' +
+        '4. Cadastrar Aluno\n' +
+        '5. Dividir Turma por Turno\n' +
+        '6. Sair\n' +
+        'Escolha uma opção:'
+    );
 
-    switch(decisao) {
-        case 1:
-            envioDeAluno()
+    switch (opcao) {
+        case '1':
+            criarTurma()
             break
-        case 2:
-            verTurmaCompleta()
+        case '2':
+            listarTurma()
             break
-        case 3:
-            verTurmaM()
+        case '3':
+            exibirTurma()
             break
-        case 4:
-            verTurmaF()
+        case '4':
+            cadastrarAluno()
             break
-        case 5:
-            alert('Programa encerrado!')
+        case '5':
+            dividirTurma()
+            break
+        case '6':
+            alert('Saindo do programa...')
             break
         default:
-            alert('Opção Inválida. Tente Novamente!')
+            alert('Opção inválida. Por favor, escolha uma opção válida.')
     }
-} while(decisao !== 5)
+} while (opcao !== '6')
