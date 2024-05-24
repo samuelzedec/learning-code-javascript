@@ -9,6 +9,7 @@ const dados = [
     {saldo: [0], deposito: [], saque: []}
 ]
 
+//Menu principal
 function executar() {
     let menu = 0
     do {
@@ -39,6 +40,7 @@ function executar() {
 }
 executar()
 
+//Conta bancaria LUCAS
 function lucas() {
     let password = Number(prompt(
         'Seja vem-vindo, ' + banco[0].user +
@@ -62,10 +64,9 @@ function acaoLucas() {
     let menu = 0
     let saldoAntigo = 0
     let saldoAtualL = dados[0].saldo[0]
-
     do {
         menu = Number(prompt(
-            'Saldo: R$ ' + saldoAtualL + ',00' +
+            'Saldo: R$ ' + saldoAtualL +
             '\n\nInforme a opção desejada:' +
             '\n[1] - Saque' +
             '\n[2] - Depósito' +
@@ -76,12 +77,12 @@ function acaoLucas() {
             case 1:
                 saldoAntigo = saqueLucas(saldoAtualL)
                 saldoAtualL -= saldoAntigo
-                dados[0].saldo[0] += saldoAtualL
+                dados[0].saldo[0] = saldoAtualL
                 break
             case 2:
                 saldoAntigo = depositoLucas()
                 saldoAtualL += saldoAntigo
-                dados[0].saldo[0] += saldoAtualL
+                dados[0].saldo[0] = saldoAtualL
                 break
             case 3:
                 extratoLucas(saldoAtualL)
@@ -134,6 +135,7 @@ function extratoLucas(saldoEmConta) {
     )
 }
 
+//Conta bancaria SAMUEL
 function samuel() {
     let password = Number(prompt(
         'Seja vem-vindo, ' + banco[1].user +
@@ -160,7 +162,7 @@ function acaoSamuel() {
 
     do {
         menu = Number(prompt(
-            'Saldo: R$ ' + saldoAtualS + ',00' +
+            'Saldo: R$ ' + saldoAtualS +
             '\n\nInforme a opção desejada:' +
             '\n[1] - Saque' +
             '\n[2] - Depósito' +
@@ -171,12 +173,12 @@ function acaoSamuel() {
             case 1:
                 saldoAntigo = saqueSamuel(saldoAtualS)
                 saldoAtualS -= saldoAntigo
-                dados[1].saldo[0] -= saldoAtualS
+                dados[1].saldo[0] = saldoAtualS
                 break
             case 2:
                 saldoAntigo = depositoSamuel()
                 saldoAtualS += saldoAntigo
-                dados[1].saldo[0] += saldoAtualS
+                dados[1].saldo[0] = saldoAtualS
                 break
             case 3:
                 extratoSamuel(saldoAtualS)
@@ -229,6 +231,7 @@ function extratoSamuel(saldoEmConta) {
     )
 }
 
+//Conta bancaria GABRIEL
 function gabriel() {
     let password = Number(prompt(
         'Seja vem-vindo, ' + banco[2].user +
@@ -255,7 +258,7 @@ function acaoGabriel() {
 
     do {
         menu = Number(prompt(
-            'Saldo: R$ ' + saldoAtualG + ',00' +
+            'Saldo: R$ ' + saldoAtualG +
             '\n\nInforme a opção desejada:' +
             '\n[1] - Saque' +
             '\n[2] - Depósito' +
@@ -266,12 +269,12 @@ function acaoGabriel() {
             case 1:
                 saldoAntigo = saqueGabriel(saldoAtualG)
                 saldoAtualG -= saldoAntigo
-                dados[2].saldo[0] -= saldoAtualG
+                dados[2].saldo[0] = saldoAtualG
                 break
             case 2:
                 saldoAntigo = depositoGabriel()
                 saldoAtualG += saldoAntigo
-                dados[2].saldo[0] += saldoAtualG
+                dados[2].saldo[0] = saldoAtualG
                 break
             case 3:
                 extratoGabriel(saldoAtualG)
