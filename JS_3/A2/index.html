@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos em HTML</title>
+</head>
+<body>
+  <h1>Eventos em HTML</h1>
+  <div>
+    <label for="onMouseEnter">Entrada do Mouse:</label>
+    <input type="text" id="onMouseEnter" onmouseenter="onMouseEnter()">
+  </div>
+  <br>
+  <div>
+    <label for="onChange">Mudança de Valor:</label>
+    <input type="text" id="onChange" onchange="console.log('Mudança no valor')">
+  </div>
+  <br>
+  <div>
+    <label for="onFocus">Entrada de Foco:</label>
+    <input type="text" id="onFocus" onfocus="console.log('Foco no elemento')">
+  </div>
+  <br>
+  <div>
+    <label for="onBluer">Saída de Mouse:</label>
+    <input type="text" id="onBlur" onblur="console.log('Desfocar no elemento')">
+  </div>
+  <br>
+  <button onclick="onClick()" >Clique-me</button>
+
+  <script src="index.js"></script>
+</body>
+</html>
