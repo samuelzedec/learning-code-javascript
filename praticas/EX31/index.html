@@ -8,9 +8,23 @@
   <script src="index.js"></script>
 </head>
 <body>
-  <header id="teamName">
+  <div id="container">
+    <h1>Letras</h1>
 
-  </header>
-  <button onclick="start()"></button>
+    <div id="letterContainer">
+      <input type="text" placeholder="Insira uma letra" id="letter" autocomplete="off">
+      <button onclick="letter()">Enviar letra</button>
+    </div>
+
+    <div>
+      <div id="shippingLetter"></div>
+      <button onclick="shippingOrder()">Ver ordem de envio</button>
+    </div>
+
+    <div>
+      <div id="organizedLetter"></div>
+      <button onclick="organizedOrder()">Ver ordem de envio</button>
+    </div>
+  </div>
 </body>
 </html>

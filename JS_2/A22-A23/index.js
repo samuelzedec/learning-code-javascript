@@ -15,7 +15,7 @@ const personagens = [
 }
 console.log(nomes)*/
 const nomes = personagens.map(function(personagem){
-    return personagem.nome
+    return personagem.nome + 'Olá'
 })
 console.log(nomes)
 

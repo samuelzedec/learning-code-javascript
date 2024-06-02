@@ -3,8 +3,8 @@ function newContact() {
 
   const h3 = document.createElement('h3')
   h3.innerText = "Contato"
-
   const ul = document.createElement('ul')
+
   //Nome
   const nameLi = document.createElement('li')
   nameLi.innerText = 'Nome: '
@@ -40,7 +40,6 @@ function newContact() {
 
 function removeContact() {
   const contactSection = document.getElementById('contact-list')
-  , contacts[contacts.length - 1]
   const titles = document.getElementsByTagName('h3')
   const contacts = document.getElementsByTagName('ul')
 

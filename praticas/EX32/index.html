@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supermercado</title>
+  <script src="index.js"></script>
+  <style>
+    body {
+      margin: auto;
+      text-align: center;
+      background-color: antiquewhite;
+
+      input {
+        width: 300px;
+        text-align: center;
+      }
+    }
+
+    h1 {
+      color: blue;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: right;
+    }
+    
+    ul {
+      text-align: center;
+    }
+    li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Produtos do Supermecado</h1>
+  <hr>
+
+  <div>
+    <h2>Adicionar produto</h2>
+    <input id="nameProduct" type="text" placeholder="Informe o nome do produto" autocomplete="off">
+    <br>
+    <input id="serialProduct" type="text" placeholder="Informe o número de série" autocomplete="off">
+    <br>
+    <input id="validityProduct" type="date" placeholder="Insira a validade do produto" autocomplete="off">
+    <br>
+    <button onclick="addProduct()">Cadastrar produto</button>
+    <hr>
+  </div>
+
+  <div>
+    <h2>Remover Produto</h2>
+    <input type="text" id="removeSerial" placeholder="Informe o número de série">
+    <br>
+    <button onclick="removeProduct()">Remover o produto</button>
+    <hr>
+  </div>
+
+  <div>
+    <h2>Produtos cadastrados</h2>
+    <ul id="listProduct"></ul>
+  </div>
+</body>
+</html>

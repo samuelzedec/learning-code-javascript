@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviando valores do DOM pra o JS</title>
+  <script src="index.js" defer></script>
+  <!--
+    defer: quer dizer para o documento JavaScript ser lido por último
+  -->
+</head>
+<body>
+  <h1>Enviando valores do DOM pra o JS</h1>
+  <hr>
+
+  <h2>Registre-se!</h2>
+  <section>
+    <label for="username">Nome de Usuário:</label>
+    <input type="text" name="username" id="username" autocomplete="off">
+    <br>
+    <label for="password">Senha:</label>
+    <input type="password" name="password" id="password" autocomplete="off">
+    <br>
+    <label for="passwordConfirmation">Confirme sua senha:</label>
+    <input type="password" name="passwordConfirmation" id="passwordConfirmation" autocomplete="off">
+    <br>
+    <button id="registerButton">Registrar</button>
+    <button onclick="removeButton()">Remover</button>
+  </section>
+</body>
+</html>

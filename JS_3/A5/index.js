@@ -11,8 +11,10 @@ function addInput() {
 
   const newInput = document.createElement('input')
   newInput.type = 'text'
+  newInput.placeholder = 'Insira seu numero do cartão'
   newInput.name = 'inputJS'
 
+  //appendChild: serve para adicionar ao outro elemento
   newLi.appendChild(newLabel)
   newLi.appendChild(newInput)
   ul.appendChild(newLi)
