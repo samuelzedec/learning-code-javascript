@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Vagas</title>
+  <script src="index.js" defer></script>
+  <style>
+    main {
+      text-align: center;
+      width: 500px;
+      height: 100vh;
+      background-color: white;
+      border: 2px solid black;
+      border-radius: 15px;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      background-color: antiquewhite;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    li > input {
+      margin-bottom: 10px;
+    }
+    .hrPrincipal {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Cadastro de Vagas</h1>
+    <hr>
+  
+    <h2>Cadastre em vagas de emprego</h2>
+    <label for="recrut">Nome do recrutador: </label>
+    <input type="text" id="recrut">
+    <br><br>
+    <form id="vacancyForm">
+      <button id="addVancacyBtn" type="button">Adicionar Vaga</button>
+      <hr>
+      <ul id="listVacancy"></ul>
+      <hr>
+      <button type="submit">Enviar vagas</button>
+    </form>
+  </main>
+</body>
+</html>
