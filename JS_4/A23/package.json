@@ -1,0 +1,14 @@
+{
+  "name": "primeiro-npm",
+  "version": "1.0.0",
+  "description": "Testando o npm pela primeira vez",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Zedec",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

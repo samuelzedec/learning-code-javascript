@@ -1,0 +1,14 @@
+{
+  "name": "desafio-16",
+  "version": "1.0.0",
+  "description": "Testando o conhecimento com NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Zedec",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.11"
+  }
+}
