@@ -1,0 +1,12 @@
+body {
+  background-color: #232323;
+  color: black;
+  text-align: center;
+  text-indent: 3em;
+}
+
+p {
+  width: 400px;
+  background-color: bisque;
+  margin: auto;
+}

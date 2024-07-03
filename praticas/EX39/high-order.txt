@@ -1,0 +1,5 @@
+- find() = Irá retornar o primeiro elemento que bater com uma determinada condição, assim retornando apenas um elemento
+
+- filter() = Irá retornar o todos os elementos que baterem com uma determinada confição, assim devolvendo um array novo sem mexer na principal
+
+- findIndex() = Irá retornar o índice do primeiro elemento que bater com uma determinada condição, assim retornando apenas um elemento
