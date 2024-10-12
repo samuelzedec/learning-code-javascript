@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Data</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app">
+        <!--<h1>Hello, {{ name }}!</h1>
+        <button v-on:click="increment()">Contador: {{ count }}</button>-->
+        <h2>GitHub User Data</h2>
+        <input type="text" v-model="searchInput">
+        <button v-on:click="fetchGithubUser()">Carregar Usuário</button>
+        <img v-bind:src="avatar_url">
+        <strong>@{{ login }}</strong>
+        <h1>{{ name }}</h1>
+        <h1> {{ company }} </h1>
+        <span>{{ bio }}</span>
+    </div>
+    //Importando a biblioteca Vue.js versão 3 a partir do CDN
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
