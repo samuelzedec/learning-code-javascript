@@ -1,0 +1,39 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+  width: 200px;
+  margin: 10px;
+}
+
+input {
+  height: 20px;
+  width: 150px;
+  border-radius: 5px;
+  border: 0px; 
+
+  text-align: center;
+}
+
+input::placeholder {
+  color: #000;
+  text-align: center;
+}
+
+h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #8ab8f5;
+  cursor: pointer;
+  width: 150px;
+  height: 30;
+  text-align: center;
+}
