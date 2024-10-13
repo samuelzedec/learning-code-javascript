@@ -1,34 +1,39 @@
 <script setup>
 import { ref } from "vue";
+import { useSearchHistoryStore } from "../stores/useSearchHistoryStore";
 
 const emit = defineEmits(["fetch-user", "update-modelValue"]);
 const searchInput = ref("");
+const searchHistory = useSearchHistoryStore();
 
 function handleSubmit(ev) {
-    ev.preventDefault();
-    emit("fetch-user", searchInput.value);
+  ev.preventDefault();
+  // Adiciona o valor do input ao histórico de pesquisa
+  searchHistory.pushToHistory(searchInput.value);
+  // Emite o evento para buscar o usuário com o valor do input
+  emit("fetch-user", searchInput.value);
 }
 
-</script> 
+function showSearchHistory() {
+  // Mostra o histórico de pesquisa em um alerta
+  alert(`Histórico de pesquisa: \n${searchHistory.users.join("\n")}`);
+}
+</script>
 
-<template> 
-    <form @submit="handleSubmit">
-        <!-- Emite o evento "update:modelValue" para o componente pai sempre que o valor do input é alterado.
-        O "$event.target.value" passa o valor atual do campo de entrada como argumento, permitindo que
-        o componente pai atualize seu estado com o novo valor. Esse padrão é usado para implementar
-        a vinculação bidirecional de dados (two-way data binding) com "v-model" em componentes personalizados. -->
-        <input 
-            type="text" 
-            v-model="searchInput"
-            @input="$emit('update:modelValue', $event.target.value)"
-        />
-        <!-- O $emit é usado diretamente para emitir eventos sem precisar definir uma constante emit localmente -->
-        <button type="submit">Carregar Usuário</button>
-    </form>
+<template>
+  <form @submit="handleSubmit">
+    <input
+      type="text"
+      v-model="searchInput"
+      @input="emit('update-modelValue', $event.target.value)"
+    />
+    <button type="submit">Carregar Usuário</button>
+    <button type="button" @click="showSearchHistory()">Ver histórico</button>
+  </form>
 </template>
 
-<style scoped> 
-input,button {
+<style scoped>
+input, button {
   max-width: 20rem;
   padding: .5rem;
 }
@@ -49,6 +54,7 @@ button {
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
+  margin: 1rem 0 1rem 1rem;
 }
 
 button:hover {
