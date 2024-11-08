@@ -1,9 +1,9 @@
 {
-  "name": "6.fragmentos",
+  "name": "graphql",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "10.Mutation/index.js", 
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon 10.Mutation/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,8 @@
     "nodemon": "^3.1.7"
   },
   "dependencies": {
+    "@graphql-tools/load-files": "^7.0.0",
+    "@graphql-tools/merge": "^9.0.8",
     "apollo-server": "^3.13.0",
     "graphql": "^16.9.0"
   }
