@@ -1,0 +1,17 @@
+type User {
+    id: ID
+    name: String
+    age: Int
+    level: Level
+    tech: String
+    position: String
+}
+
+type Query {
+    users: [User]!
+    user(id: ID): User
+}
+
+type Mutation {
+    newUser(name: String, age: Int, tech: String, postion: String): 
+}

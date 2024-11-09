@@ -1,9 +1,9 @@
 {
   "name": "graphql",
   "version": "1.0.0",
-  "main": "10.Mutation/index.js", 
+  "main": "11.Praticando/index.js", 
   "scripts": {
-    "start": "nodemon 10.Mutation/index.js"
+    "start": "nodemon 11.Praticando/index.js"
   },
   "keywords": [],
   "author": "",

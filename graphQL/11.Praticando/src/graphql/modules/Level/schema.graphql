@@ -1,0 +1,16 @@
+enum Positions {
+    TECH_LEAD
+    SENIOR
+    FULL
+    TRAINEE
+}
+
+type Level {
+    level: Positions
+    salary: String
+}
+
+type Query {
+    levels: [Level]
+}
+
