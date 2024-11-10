@@ -1,4 +1,8 @@
-const database  = require("../../../database")
+const database = require("../../../database")
+
+function generate() {
+    return database.Users[database.Users.length - 1].id + 1;
+};
 
 module.exports = {
     User: {
@@ -11,5 +15,15 @@ module.exports = {
     Query: {
         users() { return database.Users },
         user(_, args) { return database.Users.find(x => x.id == args.id) }
+    },
+
+    Mutation: {
+        newUser(_, args) {
+            const user = {
+                ...args, id: generate(), level: "C"
+            }
+            database.Users.push(user);
+            return user;
+        }
     }
 }

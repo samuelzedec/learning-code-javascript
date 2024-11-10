@@ -22,11 +22,15 @@ module.exports = {
     },
 
     Mutation: {
-        criarUsuario(_, args) {
-            // console.log(args);
-            // return args;
+        //Aqui estamos dizendo que estamos pegando a propriedades data do args usando a desestruturação
+        criarUsuario(_, { data }) {
+            const { email } = data;
+
+            if (db.usuarios.some(x => x.email == email))
+                throw new Error(`Usuário já existente: ${data.nome}`);
+            
             const newUser = {
-                ...args,
+                ...data,
                 id: generateID(db.usuarios),
                 perfil: 2
             }
@@ -35,6 +39,19 @@ module.exports = {
             console.log(newUser);
 
             return newUser;
+        },
+
+        atualizarUsuario(_, { id, data }) {
+            const user = db.usuarios.find(x => x.id == id);
+
+            if (!user)
+                throw new Error("Não há usuário com esse id");
+
+            user.email = data.email;
+            user.nome = data.nome;
+            user.telefone = data.telefone;
+
+            return user;
         }
     }
 }

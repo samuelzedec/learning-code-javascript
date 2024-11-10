@@ -13,5 +13,5 @@ type Query {
 }
 
 type Mutation {
-    newUser(name: String, age: Int, tech: String, postion: String): 
+    newUser(name: String, age: Int, tech: String, position: String): User!
 }

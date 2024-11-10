@@ -6,6 +6,13 @@ type Usuario {
     perfil: Perfil
 }
 
+#Criamos um input para que não precisemos ficar passando os mesmos parametros diversas vezes, assim deixando mais facil a manutenção de código
+input UsuarioInput {
+    nome: String 
+    email: String 
+    telefone: String
+}
+
 type Query {
     usuario(id: ID): Usuario
     usuarios: [Usuario]
@@ -13,6 +20,8 @@ type Query {
 
 #Palavra reservada
 type Mutation {
-    criarUsuario(nome: String, email: String, telefone: String) : Usuario!
+    #Antes: criarUsuario(nome: String, email: String, telefone: String) : Usuario!
+    criarUsuario(data: UsuarioInput) : Usuario! #Depois com input
+    atualizarUsuario(id: Int!, data: UsuarioInput) : Usuario!
 }
 
