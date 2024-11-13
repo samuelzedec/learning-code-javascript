@@ -13,6 +13,11 @@ input UsuarioInput {
     telefone: String
 }
 
+input DeleteUsuarioInput {
+    id: Int
+    email: String
+}
+
 type Query {
     usuario(id: ID): Usuario
     usuarios: [Usuario]
@@ -23,5 +28,6 @@ type Mutation {
     #Antes: criarUsuario(nome: String, email: String, telefone: String) : Usuario!
     criarUsuario(data: UsuarioInput) : Usuario! #Depois com input
     atualizarUsuario(id: Int!, data: UsuarioInput) : Usuario!
+    deletarUsuario(data: DeleteUsuarioInput) : Boolean!
 }
 

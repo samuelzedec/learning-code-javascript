@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "strict": true,           // Ativa verificações rigorosas (opcional, mas recomendado)
+      "esModuleInterop": true,   // Habilita a interoperabilidade de módulos ES6
+      "skipLibCheck": true,      // Ignora verificação de tipos em bibliotecas (opcional)
+      "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src"]           // Garante que a pasta src seja incluída na compilação
+  }
+  

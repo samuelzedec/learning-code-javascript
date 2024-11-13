@@ -1,7 +1,7 @@
 {
   "name": "graphql",
   "version": "1.0.0",
-  "main": "10.Mutation/index.js", 
+  "main": "10.Mutation/index.js",
   "scripts": {
     "start": "nodemon 10.Mutation/index.js"
   },
@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "sucrase": "^3.35.0"
   },
   "dependencies": {
     "@graphql-tools/load-files": "^7.0.0",

@@ -52,6 +52,23 @@ module.exports = {
             user.telefone = data.telefone;
 
             return user;
+        },
+
+
+        deletarUsuario(_, { data: { id, email } }) {
+            let index = -1;
+
+            if (id) index = db.usuarios.findIndex(x => x.id === id);
+            if (index === -1 && email) index = db.usuarios.findIndex(x => x.email === email);
+            if (index === -1) throw new Error("Não há usuário com esse id ou email");
+            
+            //aqui estou desestruturando o array de usuarios e pegando o primeiro elemento
+            const [deleted] = db.usuarios.splice(index, 1);
+            console.log(deleted);
+
+            //Serve para transformar o valor em boolea
+            return !!deleted; 
         }
+        
     }
 }
