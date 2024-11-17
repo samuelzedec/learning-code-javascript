@@ -1,0 +1,33 @@
+{
+  "name": "Front-End",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.10",
+    "@mdi/font": "7.4.47",
+    "@vue/apollo-composable": "^4.2.1",
+    "graphql": "^16.9.0",
+    "roboto-fontface": "*",
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.5",
+    "vuetify": "^3.6.11"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.24.7",
+    "@types/node": "^20.14.10",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "graphql-tag": "^2.12.6",
+    "pinia": "^2.2.6",
+    "sass": "1.77.6",
+    "typescript": "^5.4.2",
+    "unplugin-fonts": "^1.1.1",
+    "unplugin-vue-components": "^0.27.2",
+    "vite": "^5.3.3",
+    "vite-plugin-vuetify": "^2.0.3",
+    "vue-tsc": "^2.0.26"
+  }
+}

@@ -1,6 +1,5 @@
 <script setup>
 import { useSearchHistoryStore } from "@/stores/useSearchHistoryStore";
-import search from "../stores/searchHistory";
 import { reactive } from "vue";
 
 const validate = reactive({

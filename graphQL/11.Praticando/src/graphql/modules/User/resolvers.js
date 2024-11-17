@@ -14,7 +14,7 @@ module.exports = {
 
     Query: {
         users() { return database.Users },
-        user(_, args) { return database.Users.find(x => x.id == args.id) }
+        user(_, { id }) { return database.Users.find(x => x.id == id) }
     },
 
     Mutation: {

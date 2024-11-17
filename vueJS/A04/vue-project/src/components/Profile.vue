@@ -78,7 +78,5 @@ onUnmounted(() => {
 
   <slot name="footer"></slot>
 </template>
-
-
 <style scoped>
 </style>
