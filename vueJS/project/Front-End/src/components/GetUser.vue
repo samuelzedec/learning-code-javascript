@@ -171,5 +171,4 @@ function GoToBack() {
     width: 100px;
     text-align: center !important;
 }
-
 </style>
