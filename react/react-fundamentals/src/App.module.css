@@ -1,0 +1,11 @@
+.app {
+	background-color: #2c2c2d;
+	display: grid;
+	min-height: 100vh;
+	place-content: center;
+	text-align: center;
+}
+/* ==================================================================
+ * Temos que por o nome do arquivo com .module.css para poder usá-lo 
+ * como objeto no arquivo jsx. Por isso o nome é css module!
+ * ================================================================== */

@@ -1,0 +1,13 @@
+.App {
+	border-radius: 10px;
+	background-color: #b8b8b8;	
+	height: 400px;
+	width: 45vw;
+	padding: 20px;
+}
+
+.AppFlex {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
