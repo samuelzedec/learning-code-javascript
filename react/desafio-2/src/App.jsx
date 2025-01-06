@@ -13,9 +13,9 @@ function App() {
         bio="Aprendendo react em uma semana para o trabalho"
         email="aprendendoreact@next.com"
         phone="(92) 99239-9090"
-        githubUrl="https"
-        linkedinUrl="https"
-        twitterUrl="https"
+        githubUrl="https://github.com/"
+        linkedinUrl="https://www.linkedin.com/feed/"
+        twitterUrl="https://x.com/?lang=en&mx=2"
       />  
     </div>
   );

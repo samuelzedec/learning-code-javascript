@@ -22,16 +22,23 @@ export const Profile = ({
 				alt={name}
 			/>
 			<h1>{ name }</h1>
-      <Container value={bio} />
-      <Container value={phone} />
-      <Container value={email} />
-
+      <Container>
+        {bio}
+      </Container>
+      
+      <Container>
+        {phone}
+      </Container>
+      
+      <Container>
+        {email}
+      </Container>
       <div
         className={style.DivButtons}
       >
-        <Button value="Github" link="https://github.com/" />
-        <Button value="LinkedIn" link="https://www.linkedin.com/feed/" />
-        <Button value="Twitter" link="https://x.com/?lang=en&mx=2" />
+        <Button value="Github" link={githubUrl} />
+        <Button value="LinkedIn" link={linkedinUrl} />
+        <Button value="Twitter" link={twitterUrl} />
       </div>
     </div>
   );
