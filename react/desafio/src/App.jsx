@@ -1,6 +1,5 @@
 import module from "./App.module.css";
-import { Title } from "./Title";
-import { Text } from "./Text";
+import { Presentation } from "./Presentation";
 import { BuyButton } from "./BuyButton"
 import { Image } from "./Image";
 
@@ -22,8 +21,7 @@ function App() {
           flexDirection: "column"
         }}
       >
-        <Title />
-        <Text />
+        <Presentation />
         <BuyButton />
       </div>
     </div>

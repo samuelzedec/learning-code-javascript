@@ -1,0 +1,26 @@
+.Image {
+	border-radius: 50%;
+	height: 150px;
+}
+
+.Main {
+	height: 600px;
+	width: 350px;
+	border-radius: 15px;
+	background-color: #e5e5e5;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	padding: 30px 0px;
+	margin: 50px auto;
+	border: 1px solid black;
+}
+
+.DivButtons {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

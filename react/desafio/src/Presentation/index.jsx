@@ -1,6 +1,12 @@
-function Text() {
+function Presentation() {
 	return (
 		<>
+			<h1
+				style={{
+					padding: "0px",
+					margin: "1px"
+				}}
+			>Pôster: Star Wars (1977)</h1>
 			<p>
 				Um pôster decorativo épico do filme Star Wars, com moldura de MDF e <br/>
 				tamanho A3. Uma ótima recordação de um dos mais icônicos files de <br/>
@@ -12,4 +18,4 @@ function Text() {
 	);
 }
 
-export { Text };
+export { Presentation };
