@@ -16,7 +16,7 @@ export function Generated() {
   }
 
   function resetButton() {
-    setCopy("Copiar");
+    setCopy("Copiar !");
   }
 
   return (
