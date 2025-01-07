@@ -1,0 +1,17 @@
+.button {
+  width: 150px;
+  height: 40px;
+  margin: 20px;
+  
+  font-weight: 600;
+  color: white;
+
+  background-color: #424242;
+  border-radius: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
