@@ -1,33 +1,29 @@
-import Title from "../Title"
-import ProfileSection from "./ProfileSection"
-import styles from "./styles.module.css"
-import LinkButton from "../LinkButton"
+import Title from "../Title";
+import ProfileSection from "./ProfileSection";
+import styles from "./styles.module.css";
+import LinkButton from "../LinkButton";
+import { useState } from "react";
 
 export default function Profile(props) {
-  let fallowButton = "Fallow";
+  //Estrutura do state: [valor, função], usamos o useState() para deixar a variavel reativa no html  
+  const [followText, setFollowText] = useState("Follow");
+  //A Sintaxe de desestruturação no useReact() é mais utilizada, e na parte da função sempre use o set e o msm nome da variável
 
-  function handleClick(ev) {
-    if (fallowButton == "Fallow") {
-      alert("Agora você está seguindo");
-      fallowButton = "Unfallow";
+  function handleClick() {
+    if (followText == "Follow") {
+      setFollowText("Following");
       return;
     }
-
-    alert("Agora você parou de seguir");
-    fallowButton = "Fallow";
+    setFollowText("Follow");
   }
 
   return (
     <div className={styles.container}>
       <img className={styles.avatar} src={props.avatar} alt={props.name} />
       <Title>
-        <span>Name: </span>
-        {props.name}
-        <button
-          className={styles.followButton}
-          onClick={handleClick}
-        >
-          {fallowButton}
+        <span>Name: {props.name}</span>
+        <button onClick={handleClick} className={styles.followButton}>
+          {followText}
         </button>
       </Title>
       <ProfileSection>{props.bio}</ProfileSection>
@@ -38,10 +34,10 @@ export default function Profile(props) {
         id="links-section"
         data-test="some value"
       >
-          <LinkButton href={props.githubUrl}>GitHub</LinkButton>
-          <LinkButton href={props.linkedinUrl}>LinkedIn</LinkButton>
-          <LinkButton href={props.twitterUrl}>Twitter</LinkButton>
+        <LinkButton href={props.githubUrl}>GitHub</LinkButton>
+        <LinkButton href={props.linkedinUrl}>LinkedIn</LinkButton>
+        <LinkButton href={props.twitterUrl}>Twitter</LinkButton>
       </ProfileSection>
     </div>
-  )
+  );
 }
