@@ -9,6 +9,7 @@ export function Generated() {
   const { password, reload } = usePassword();
   const [copy, setCopy] = useState("Copiar!");
   const [passwordSize, setPasswordSize] = useState(12);
+  const [showInput, setShowInput] = useState(false);
 
   function reloadButton() {
     navigator.clipboard.writeText(password);
@@ -25,8 +26,24 @@ export function Generated() {
 
       <div className={styles.container}>
         <label htmlFor="passwordSize">Tamanho:</label>
-        <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
+        <input
+          type="checkbox"
+          id="showInput"
+          value={showInput}
+          onChange={() => setShowInput((currentState) => !currentState)}
+        />
+        {showInput.toString()}
       </div>
+
+      {showInput ? (
+        <div className={styles.container}>
+          <label htmlFor="passwordSize">Customizar o tamanho:</label>
+          <Input
+            passwordSize={passwordSize}
+            setPasswordSize={setPasswordSize}
+          />
+        </div>
+      ) : null}
 
       <div className={styles.container}>
         <Button
@@ -34,10 +51,10 @@ export function Generated() {
           colorBorder="1px solid #58ff5b"
           func={() => {
             resetButton();
-            reload(() => generatedPassword(passwordSize));
+            reload(() => generatedPassword(showInput ? passwordSize : 8));
           }}
         >
-          {"Gerar Senha!"}
+          {`Gerar senha de ${showInput ? passwordSize : 8} caracteres!`}
         </Button>
 
         <Button
