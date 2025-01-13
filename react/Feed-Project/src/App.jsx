@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SendingMessages } from "./views/SendingMessages";
+import { DisplayMessage } from "./views/DisplayMessage";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -13,8 +14,9 @@ function App() {
         setEmail={setEmail}
         message={message}
         setMessage={setMessage}
-        setMessagearr={setMessageArr}
+        setMessageArr={setMessageArr}
       />
+      <DisplayMessage messageArr={messageArr}/>
     </div>
   );
 }

@@ -10,14 +10,19 @@ function SendingMessages({
   setMessage,
   setMessageArr,
 }) {
-  const handleShipping = (message) => {
-    console.log({ email, message, data: new Date() })
-    setMessageArr((state) => [...state, { email, message, data: new Date() }]);
+  const handleShipping = (ev) => {
+    ev.preventDefault();
+    console.log({ email, message, date: new Date() });
+    setMessageArr((state) =>
+      [...state, { email, message, date: new Date() }].sort(
+        (a, b) => b.date - a.date
+      )
+    );
   };
 
   return (
     <Container>
-      <form ={handleShipping}>
+      <form onSubmit={handleShipping}>
         <h2 className="text-white text-center text-3xl font-medium my-5">
           Envie sua mensagem
         </h2>
