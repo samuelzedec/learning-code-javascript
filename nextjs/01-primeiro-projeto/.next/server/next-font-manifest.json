@@ -1,6 +1,11 @@
 {
-  "app": {},
-  "appUsingSizeAdjust": false,
+  "app": {
+    "[project]/src/app/page": [
+      "static/media/JetBrainsMono-s.p.333b7e48.ttf",
+      "static/media/6xK_dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkKEo58a_wjwxUD2GFw-s.p.7f80cbcd.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
   "pages": {},
   "pagesUsingSizeAdjust": false
 }

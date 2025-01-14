@@ -24,7 +24,7 @@ export default function Home(): ReactNode {
       </header>
 
       <main className="border border-solid rounded-md bg-[#1a1a1a] border-[#FFF] p-8 grid gap-5">
-        <h1>Olá, Next.js</h1>
+        <h1 className="font-jetbrains">Olá, Next.js</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
           eveniet ipsum incidunt amet ea in! Magnam voluptatem blanditiis ullam

@@ -485,6 +485,14 @@ body {
   padding-bottom: .5rem;
 }
 
+.font-jetbrains {
+  font-family: var(--font-jetbrains-mono);
+}
+
+.font-quicksand {
+  font-family: var(--font-quicksand);
+}
+
 .text-sm {
   font-size: .875rem;
   line-height: 1.25rem;

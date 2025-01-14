@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/geist_f478a5ae.module.css"],"sourcesContent":["@font-face {\n    font-family: 'geist';\n    src: url('@vercel/turbopack-next/internal/font/local/font?{%22path%22:%22../fonts/Geist.ttf%22,%22preload%22:true,%22has_size_adjust%22:true}') format('truetype');\n    font-display: swap;\n    font-weight: 400 700;\n}\n\n@font-face {\n    font-family: 'geist Fallback';\n    src: local(\"Arial\");\n    ascent-override: 94.47%;\ndescent-override: 27.73%;\nline-gap-override: 0.00%;\nsize-adjust: 106.39%;\n\n}\n\n.className {\n    font-family: 'geist', 'geist Fallback';\n    \n}\n.variable {\n    --font-geist-regular: 'geist', 'geist Fallback';\n}\n\n"],"names":[],"mappings":"AAAA;;;;;;;AAOA;;;;;;;;;AAUA;;;;AAIA"}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

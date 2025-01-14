@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animatePlugin from "tailwindcss-animate";
 
 export default {
     darkMode: ["class"],
@@ -55,8 +56,12 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+			},
+			fontFamily: {
+				jetbrains: ["var(--font-jetbrains-mono)"],
+				quicksand: ["var(--font-quicksand)"]
+			},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+	plugins: [animatePlugin],
 } satisfies Config;

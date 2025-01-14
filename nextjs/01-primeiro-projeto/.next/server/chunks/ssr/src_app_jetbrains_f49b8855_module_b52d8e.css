@@ -1,0 +1,25 @@
+/* [project]/src/app/jetbrains_f49b8855.module.css [app-client] (css) */
+@font-face {
+  font-family: jetBrains;
+  src: url("/_next/static/media/JetBrainsMono-s.p.333b7e48.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: jetBrains Fallback;
+  src: local(Arial);
+  ascent-override: 77.57%;
+  descent-override: 22.82%;
+  line-gap-override: 0.0%;
+  size-adjust: 131.49%;
+}
+
+.jetbrains_f49b8855-module__LKCoCa__className {
+  font-family: jetBrains, jetBrains Fallback;
+}
+
+.jetbrains_f49b8855-module__LKCoCa__variable {
+  --font-geist-regular: "jetBrains", "jetBrains Fallback";
+}
+
+/*# sourceMappingURL=src_app_jetbrains_f49b8855_module_b52d8e.css.map*/

@@ -485,6 +485,10 @@ body {
   padding-bottom: .5rem;
 }
 
+.font-geist {
+  font-family: var(--font-geist-regular);
+}
+
 .text-sm {
   font-size: .875rem;
   line-height: 1.25rem;
