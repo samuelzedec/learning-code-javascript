@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\n  \"app\": {\n    \"[project]/src/app/page\": [\n      \"static/media/JetBrainsMono-s.p.333b7e48.ttf\",\n      \"static/media/6xK_dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkKEo58a_wjwxUD2GFw-s.p.7f80cbcd.woff2\"\n    ]\n  },\n  \"appUsingSizeAdjust\": true,\n  \"pages\": {},\n  \"pagesUsingSizeAdjust\": false\n}"

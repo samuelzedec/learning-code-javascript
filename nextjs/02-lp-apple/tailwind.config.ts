@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      montserrat: ["var(--font-montserrat)"]
+    }
   },
   plugins: [],
 } satisfies Config;

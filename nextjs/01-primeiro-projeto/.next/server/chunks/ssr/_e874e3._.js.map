@@ -1,9 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/DEV-%20DD/Documents/learning-code-javascript/nextjs/01-primeiro-projeto/src/app/layout.tsx"],"sourcesContent":["import \"../styles/index.css\";\r\nimport localFont from \"next/font/local\";\r\n// localFont irá incluir a font para uso\r\n\r\nconst jetBrains = localFont({\r\n  src: \"../fonts/JetBrains.ttf\", //Caminho na font\r\n  variable: \"--font-geist-regular\", //Definindo uma váriavel css que irá ter como valor a font do src,\r\n});\r\n\r\nexport default function RootLayout({\r\n  children,\r\n}: Readonly<{\r\n  children: React.ReactNode;\r\n}>) {\r\n  return (\r\n    <html lang=\"en\">\r\n    <body className=\"font-geist\">{children}</body>\r\n    </html>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;;;AASe,SAAS,WAAW,EACjC,QAAQ,EAGR;IACA,qBACE,8OAAC;QAAK,MAAK;kBACX,cAAA,8OAAC;YAAK,WAAU;sBAAc;;;;;;;;;;;AAGlC"}},
-    {"offset": {"line": 31, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
-    {"offset": {"line": 42, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/DEV-%20DD/Documents/learning-code-javascript/nextjs/01-primeiro-projeto/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-rsc'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,0HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0]}},
-    {"offset": {"line": 44, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
