@@ -20,7 +20,7 @@ export default function Home() {
         />
 
         <ViewMacbook
-          imageLink="https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mba_13_15__fx2g3qlubdym_large.png"
+          imageLink="https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mbp_14_16__bkl8zusnkpw2_large.png"
           macbookName="Macbook Pro"
           pol="de 14 e 16 pol."
           chip="Chip M3, M3 Pro e M3 Max"
