@@ -1,0 +1,28 @@
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+
+.card {
+  background-color: #232329;
+  border: 1px solid #ffffff;
+  border-radius: .25rem;
+  max-width: 30rem;
+  padding: 1rem;
+}
+
+.cardTitle {
+  margin-bottom: .75rem;
+}
+
+.cardText {
+  margin: 0;
+  text-align: left;
+}
