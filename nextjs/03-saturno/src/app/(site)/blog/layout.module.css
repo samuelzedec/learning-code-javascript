@@ -1,0 +1,11 @@
+.blogLayout {
+  display: grid;
+  grid-template-columns: 24rem 1fr;
+  padding: 2rem;
+}
+
+.blogLayout aside ul {
+  display: grid;
+  gap: .5rem;
+  margin: 2rem;
+}
