@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="contact">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="./node_modules/angular/angular.js"></script>
+
+    <script>
+      angular.module("contact", []);
+      angular.module("contact").controller("contactCtrl", ($scope) => {
+        $scope.title = "Lista Telefônica";
+        $scope.contacts = [
+          { name: "Pedro", phone: "(92) 99999-9999" },
+          { name: "Marcos", phone: "(92) 99999-9998" },
+          { name: "Julio", phone: "(92) 99999-9997" },
+          { name: "Jonathan", phone: "(92) 99999-9996" },
+        ];
+
+        $scope.addContact = (contact) =>
+          $scope.contacts.push(angular.copy(contact));
+      });
+    </script>
+
+    <style>
+      .jumbotron {
+        width: 400px;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .form-control {
+        margin: 5px 0px;
+      }
+    </style>
+  </head>
+  <body ng-controller="contactCtrl">
+    <div class="jumbotron">
+      <!-- <h4 ng-bind="title"></h4> -->
+      <h3 style="margin-bottom: 20px">{{title}}</h3>
+      <table class="table table-striped">
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+        </tr>
+        <tr ng-repeat="contact in contacts">
+          <td>{{contact.name}}</td>
+          <td>{{contact.phone}}</td>
+        </tr>
+      </table>
+      <hr />
+
+      <input class="form-control" type="text" ng-model="contact.name" placeholder="Nome"/>
+      <input class="form-control" ng-model="contact.phone" placeholder="Telefone"/>
+      <button class="btn btn-primary btn-block" ng-click="addContact(contact)">Adicionar Contato</button>
+    </div>
+  </body>
+</html>
