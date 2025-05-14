@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "angular": "^1.8.2"
+    "angular": "^1.8.2",
+    "angular-i18n": "^1.8.3",
+    "angular-messages": "^1.8.3"
   }
 }

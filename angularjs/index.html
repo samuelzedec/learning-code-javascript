@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="contact">
+<html lang="pt-br" ng-app="contactList">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,57 +8,147 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="css/style.css">
     <script src="./node_modules/angular/angular.js"></script>
-
-    <script>
-      angular.module("contact", []);
-      angular.module("contact").controller("contactCtrl", ($scope) => {
-        $scope.title = "Lista Telefônica";
-        $scope.contacts = [
-          { name: "Pedro", phone: "(92) 99999-9999" },
-          { name: "Marcos", phone: "(92) 99999-9998" },
-          { name: "Julio", phone: "(92) 99999-9997" },
-          { name: "Jonathan", phone: "(92) 99999-9996" },
-        ];
-
-        $scope.addContact = (contact) =>
-          $scope.contacts.push(angular.copy(contact));
-      });
-    </script>
-
-    <style>
-      .jumbotron {
-        width: 400px;
-        text-align: center;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .form-control {
-        margin: 5px 0px;
-      }
-    </style>
+    <script src="./node_modules/angular-messages/angular-messages.js"></script>
+    <script src="./node_modules/angular-i18n/angular-locale_pt-br.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/config/config.js"></script>
+    <script src="./js/services/operatorsService.js"></script>
+    <script src="./js/services/contactsService.js"></script>
+    <script src="./js/controllers/contactsCtrl.js"></script>
+    <script src="./js/config/serialGeneratorConfig.js"></script>
+    <script src="./js/services/serialGeneratorService.js"></script>
   </head>
   <body ng-controller="contactCtrl">
     <div class="jumbotron">
-      <!-- <h4 ng-bind="title"></h4> -->
+      <h6>{{config}}</h6>
       <h3 style="margin-bottom: 20px">{{title}}</h3>
-      <table class="table table-striped">
+
+      <input
+        type="text"
+        class="form-control"
+        ng-model="search"
+        placeholder="O que você buscando"
+      />
+      
+      <table ng-show="contacts.length > 0" class="table">
         <tr>
-          <th>Nome</th>
-          <th>Telefone</th>
+          <th>Selecionar</th>
+          <th>Serial</th>
+          <th><a href="" ng-click="organize('name')">Nome</a></th>
+          <th><a href="" ng-click="organize('phone')">Telefone</a></th>
+          <th>Operadora</th>
+          <th>Data</th>
+          <th>Cor</th>
         </tr>
-        <tr ng-repeat="contact in contacts">
-          <td>{{contact.name}}</td>
+        <!-- <tr ng-class="[class1, class2]" ng-repeat="contact in contacts"> -->
+        <!-- <tr ng-class="{ 'selected negrito': contact.selected }" ng-repeat="contact in contacts"> -->
+        <tr
+          ng-class="{selected: contact.selected}"
+          ng-repeat="contact in contacts | limitTo:5 | filter: search | orderBy:organizationCriteria:organizationDirection"
+        >
+        <!-- ng-repeat="contact in contacts | filter: { name: search }" -->
+          <td><input type="checkbox" ng-model="contact.selected"/></td>
+          <td>{{contact.serial}}</td>
+          <td>{{contact.name | uppercase}}</td>
           <td>{{contact.phone}}</td>
+          <td>{{contact.operator.name}}</td>
+          <td>{{contact.date | date:"EEEE, d 'de' MMMM 'de' y"}}</td>
+          <td>
+            <div
+              style="width: 20px; height: 20px"
+              ng-style="{'background-color': contact.color}"
+            >
+            </div>
+          </td>
         </tr>
       </table>
       <hr />
 
-      <input class="form-control" type="text" ng-model="contact.name" placeholder="Nome"/>
-      <input class="form-control" ng-model="contact.phone" placeholder="Telefone"/>
-      <button class="btn btn-primary btn-block" ng-click="addContact(contact)">Adicionar Contato</button>
+      <form name="contactForm">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nome"
+          name="name"
+          ng-required="true"
+          ng-model="contact.name"
+          ng-minlength="10"
+        />
+
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Telefone"
+          name="phone"
+          ng-required="true"
+          ng-model="contact.phone"
+          ng-pattern="/^\(\d{2}\)\s\d{5}-\d{4}$/"
+        />
+        <!--
+          operator.code → valor real (value) que será atribuído ao <select> quando esse option for selecionado.
+          as operator.name → label (texto visível) que o usuário verá na lista.
+          for operator in operators → lista (array ou coleção) de onde os itens estão vindo.
+        -->
+        <select
+          class="form-control"
+          ng-model="contact.operator"
+          ng-options="
+            operator.name + ' - ' + (operator.price | currency:'R$ ') group by
+            operator.category for
+            operator in operators | orderBy:'name'"
+        >
+          <option value="">Selecione uma operadora</option>
+        </select>
+      </form>
+
+      <div ng-messages="contactForm.name.$error">
+        <div
+          ng-message="required"
+          class="alert e alert-danger"
+        >
+          Preencha o campo nome.
+        </div>
+        <div
+          ng-message="minlength"
+          class="alert e alert-danger"
+        >
+          O campo nome deve ter no mínimo 10 caracteres.
+        </div>
+      </div>
+
+      <div
+        ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty"
+        class="alert e alert-danger"
+      >
+        Preencha o campo telefone.
+      </div>
+
+      <div
+        ng-show="contactForm.phone.$error.patterny"
+        class="alert e alert-danger"
+      >
+        Prencha o telefone no formato (00) 00000-0000.
+      </div>
+
+      <button
+        class="btn btn-primary btn-block"
+        ng-click="addContact(contact)"
+        ng-disabled="contactForm.$invalid"
+      >
+        Adicionar Contato
+      </button>
+
+      <button
+        class="btn btn-danger btn-block"
+        ng-click="removeContact(contacts)"
+        ng-show="selectedContacts()"
+      >
+        Remover Contatos
+      </button>
     </div>
+    <!-- {{ 100 | number:2 }} -->
+    <div ng-include="'./views/footer.html'"></div>
   </body>
 </html>
