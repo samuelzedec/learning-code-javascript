@@ -3,28 +3,28 @@
 angular.module("contactList").factory("mockContacts", (mockOperators) => {
   const mock = [
     {
-      name: "Pedro",
+      name: "Pedro LIMA",
       phone: "(92) 99999-9998",
       color: "blue",
       date: new Date(),
       operator: mockOperators.getOperators()[1],
     },
     {
-      name: "Marcos",
+      name: "Marcos de Souza",
       phone: "(92) 99999-9995",
       color: "red",
       date: new Date(),
       operator: mockOperators.getOperators()[4],
     },
     {
-      name: "Julio",
+      name: "Julio da CUNHA",
       phone: "(92) 99999-9997",
       color: "green",
       date: new Date(),
       operator: mockOperators.getOperators()[0],
     },
     {
-      name: "Jonathan",
+      name: "Jonathan DE Lopes",
       phone: "(92) 99999-9992",
       color: "purple",
       date: new Date(),

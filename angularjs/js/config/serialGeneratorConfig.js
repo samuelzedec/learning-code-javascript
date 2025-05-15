@@ -1,3 +1,3 @@
 angular.module("contactList").config(function (serialGeneratorProvider) {
-  serialGeneratorProvider.setLength(100);
+  serialGeneratorProvider.setLength(5);
 });

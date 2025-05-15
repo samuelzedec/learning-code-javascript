@@ -9,6 +9,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ui.css">
     <script src="./node_modules/angular/angular.js"></script>
     <script src="./node_modules/angular-messages/angular-messages.js"></script>
     <script src="./node_modules/angular-i18n/angular-locale_pt-br.js"></script>
@@ -19,12 +20,20 @@
     <script src="./js/controllers/contactsCtrl.js"></script>
     <script src="./js/config/serialGeneratorConfig.js"></script>
     <script src="./js/services/serialGeneratorService.js"></script>
+    <script src="./js/filters/nameFilter.js"></script>
+    <script src="./js/filters/ellipsisFilter.js"></script>
+    <script src="./js/directives/uiAlertDirective.js"></script>
   </head>
   <body ng-controller="contactCtrl">
     <div class="jumbotron">
-      <h6>{{config}}</h6>
-      <h3 style="margin-bottom: 20px">{{title}}</h3>
+      <ui-alert
+        title="Ops, aconteceu um problema!"
+        message="error"
+      >
+        <h6>{{config}}</h6>
+      </ui-alert>
 
+      <h3 style="margin-bottom: 20px">{{title}}</h3>
       <input
         type="text"
         class="form-control"
@@ -51,7 +60,7 @@
         <!-- ng-repeat="contact in contacts | filter: { name: search }" -->
           <td><input type="checkbox" ng-model="contact.selected"/></td>
           <td>{{contact.serial}}</td>
-          <td>{{contact.name | uppercase}}</td>
+          <td>{{contact.name | name | ellipsis:10 }}</td>
           <td>{{contact.phone}}</td>
           <td>{{contact.operator.name}}</td>
           <td>{{contact.date | date:"EEEE, d 'de' MMMM 'de' y"}}</td>

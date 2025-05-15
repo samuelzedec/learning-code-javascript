@@ -1,6 +1,7 @@
 "use strict";
 
 angular.module("contactList").controller("contactCtrl", ($scope, mockOperators, mockContacts, serialGenerator, config) => {
+  $scope.error = "Internal server error - Status Code 500";
   $scope.title = "Lista Telefônica";
   $scope.class = "selected";
   $scope.config = config.baseURL;
